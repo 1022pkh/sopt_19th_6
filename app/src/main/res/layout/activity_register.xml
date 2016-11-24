@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FAFAFA">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="등록하기"
+            android:textColor="#000000"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#dfdfdf"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:orientation="vertical"
+        android:background="#ffffff"
+        android:weightSum="10">
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:gravity="right"
+                android:layout_marginRight="10dp"
+                android:text="제목"/>
+
+            <EditText
+                android:id="@+id/inputTitleEdit"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:singleLine="true"
+                android:maxLength="15"
+                android:textSize="15sp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/board_background"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:gravity="right"
+                android:layout_marginRight="10dp"
+                android:text="내용"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/inputContentArea"
+            android:layout_width="match_parent"
+            android:layout_height="214dp"
+            android:padding="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/board_background">
+
+
+            <EditText
+                android:id="@+id/inputContentEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:hint="500자 이내"
+                android:textSize="14sp"
+                android:background="@null"
+                android:maxLength="500"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            >
+
+            <TextView
+                android:id="@+id/addImageName"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="12sp"
+                android:gravity="center_vertical"
+                android:text=""/>
+
+            <Button
+                android:id="@+id/getImageBtn"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:textSize="14sp"
+                android:layout_marginLeft="5dp"
+                android:textColor="#000000"
+                android:text="사진 첨부"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/completeBtn"
+                android:layout_width="110dp"
+                android:layout_height="38dp"
+                android:textSize="15sp"
+                android:textColor="#000000"
+                android:text="등록"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
