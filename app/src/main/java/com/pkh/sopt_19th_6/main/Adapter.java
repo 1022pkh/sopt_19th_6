@@ -40,7 +40,7 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        holder.titleView.setText(mDatas.get(position).subject);
+        holder.titleView.setText(mDatas.get(position).title);
         holder.contentView.setText(mDatas.get(position).contents);
     }
 

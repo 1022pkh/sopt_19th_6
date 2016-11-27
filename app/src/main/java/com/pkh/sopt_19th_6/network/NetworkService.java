@@ -1,6 +1,7 @@
 package com.pkh.sopt_19th_6.network;
 
 
+import com.pkh.sopt_19th_6.detail.DetailResult;
 import com.pkh.sopt_19th_6.main.MainResult;
 import com.pkh.sopt_19th_6.register.RegisterResult;
 
@@ -22,14 +23,13 @@ public interface NetworkService {
     @GET("/posts")
     Call<MainResult> getMainData();
 
-
     @GET("/posts/{notice_id}")
-    Call<MainResult> getDetailData(@Path("notice_id") String notice_id);
+    Call<DetailResult> getDetailData(@Path("notice_id") String notice_id);
 
     @Multipart
     @POST("/posts")
     Call<RegisterResult> registerImgNotice(@Part MultipartBody.Part file,
-                                         @Part("subject") RequestBody title,
+                                         @Part("title") RequestBody title,
                                          @Part("contents") RequestBody content);
 
 }

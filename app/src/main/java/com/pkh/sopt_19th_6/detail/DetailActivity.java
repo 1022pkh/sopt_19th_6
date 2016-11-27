@@ -11,7 +11,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.pkh.sopt_19th_6.R;
 import com.pkh.sopt_19th_6.application.ApplicationController;
-import com.pkh.sopt_19th_6.main.MainResult;
 import com.pkh.sopt_19th_6.network.NetworkService;
 
 import retrofit2.Call;
@@ -46,25 +45,27 @@ public class DetailActivity extends AppCompatActivity {
 
         service = ApplicationController.getInstance().getNetworkService();
 
-        // TODO: 2016. 11. 21. 요청
-        Call<MainResult> requestDetail = service.getDetailData(id);
-        requestDetail.enqueue(new Callback<MainResult>() {
-            @Override
-            public void onResponse(Call<MainResult> call, Response<MainResult> response) {
-                if(response.isSuccessful()){
-                    titleTextview.setText(response.body().result.get(0).subject);
-                    contentTextview.setText(response.body().result.get(0).contents);
 
-                    if(response.body().result.get(0).image_url != ""){
+
+        // TODO: 2016. 11. 21. 요청
+        Call<DetailResult> requestDetail = service.getDetailData(id);
+        requestDetail.enqueue(new Callback<DetailResult>() {
+            @Override
+            public void onResponse(Call<DetailResult> call, Response<DetailResult> response) {
+                if(response.isSuccessful()){
+                    titleTextview.setText(response.body().result.title);
+                    contentTextview.setText(response.body().result.contents);
+
+                    if(response.body().result.image_url != ""){
                         Glide.with(getApplicationContext())
-                                .load(response.body().result.get(0).image_url)
+                                .load(response.body().result.image_url)
                                 .into(imgView);
                     }
                 }
             }
 
             @Override
-            public void onFailure(Call<MainResult> call, Throwable t) {
+            public void onFailure(Call<DetailResult> call, Throwable t) {
 
             }
         });

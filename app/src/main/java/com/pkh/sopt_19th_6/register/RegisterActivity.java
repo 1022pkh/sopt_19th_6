@@ -166,6 +166,10 @@ public class RegisterActivity extends AppCompatActivity {
                                     mProgressDialog.dismiss();
                                 }
                             }
+                            else{
+                                Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_SHORT).show();
+                                mProgressDialog.dismiss();
+                            }
                         }
 
                         @Override

@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     tools:context="com.pkh.sopt_19th_6.detail.DetailActivity"
     android:weightSum="10"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#ffffff">
 
     <RelativeLayout
         android:layout_width="match_parent"

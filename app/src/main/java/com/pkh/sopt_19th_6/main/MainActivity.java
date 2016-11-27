@@ -92,8 +92,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onRestart() {
+        super.onRestart
+                ();
         // TODO: 2016. 11. 21. 새로 리스트 받아오기.
 
         Call<MainResult> requestMainData =  service.getMainData();
@@ -102,9 +103,11 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<MainResult> call, Response<MainResult> response) {
 
                 if(response.isSuccessful()){
+
                     Log.i("myTag", String.valueOf(response.body().result.size()));
-                    adapter.setAdapter(response.body().result);
                     mDatas = response.body().result;
+                    adapter.setAdapter(response.body().result);
+
                 }
             }
 
